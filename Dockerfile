@@ -1,4 +1,4 @@
-FROM dezinger/ubuntu-14:latest
+FROM dezinger/ubuntu-18:latest
 
 MAINTAINER dezinger@gmail.com
 

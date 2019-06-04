@@ -1,4 +1,4 @@
-# Nginx on Ubuntu 14.04 LTS (Trusty) Docker Image
+# Nginx on Ubuntu 18.04 LTS (Bionic Beaver) Docker Image
 
 This image provides a basic nginx hosting environment. 
 The intent is for the web content itself to be stored in persistent storage wihch 
