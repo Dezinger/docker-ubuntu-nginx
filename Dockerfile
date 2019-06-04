@@ -9,6 +9,8 @@ COPY files/ /
 
 RUN \ 
 # install Nginx.
+    apt-get update && \
+    apt-get install -y software-properties-common && \
     add-apt-repository -y ppa:nginx/stable && \
     apt-get update && \
     apt-get install -y nginx && \
@@ -28,6 +30,10 @@ RUN \
     chmod 755 /var/www && \
     chmod -R 666 /etc/nginx/conf.d/* && \
     mkdir -p /var/cache/nginx/proxy && \
-    chown -R www-data:www-data /var/lib/nginx /var/cache/nginx/proxy
+    chown -R www-data:www-data /var/lib/nginx /var/cache/nginx/proxy && \
+# clean
+    apt-get remove -y software-properties-common && \
+    apt-get autoremove -y && \
+    rm -rf /var/lib/apt/lists/*
 
 EXPOSE 80
